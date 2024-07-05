@@ -5,6 +5,7 @@ import { useCurrentPos } from "../lib/useCurrentPos";
 import { Loading } from "../components/Loading";
 import { Header } from "../components/Header";
 import { Section } from "../components/Section";
+import { Title } from "../components/Title";
 
 const Container = styled.div`
   max-width: 450px;
@@ -17,6 +18,7 @@ const Container = styled.div`
     rgba(218, 198, 255, 1) 50%,
     rgba(182, 138, 255, 1) 100%
   );
+  overflow: hidden;
 `;
 
 export const Home = () => {
@@ -25,20 +27,17 @@ export const Home = () => {
     queryKey: ["weather", lat, lon],
     queryFn: getWeather,
   });
-
-  // console.log(lat, lon);
-
-  console.log(data);
   return (
     <>
       {isLoading ? (
         <Loading />
       ) : (
         <>
+          <Title titleName={"HOME"} />
           {data && (
             <Container>
-              <Header datas={data} />
-              <Section datas={data} />
+              <Header headerData={data} />
+              <Section sectionData={data} />
             </Container>
           )}
         </>

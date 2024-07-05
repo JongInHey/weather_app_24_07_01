@@ -1,3 +1,10 @@
+import { Title } from "../components/Title";
+
 export const Login = () => {
-  return <div>login</div>;
+  return (
+    <div style={{ color: "black" }}>
+      <Title titleName={"LOGIN"} />
+      login
+    </div>
+  );
 };

@@ -7,7 +7,7 @@
 - [x] tan-stack-query
 - [x] styled-components
 - [x] styled-reset
-- [] react-helmet
+- [x] react-helmet
 
 ### 작업 내용
 
@@ -19,9 +19,8 @@
 - [x] 현재 위치 얻어오기
 - [x] 현재 위치에 맞는 날씨 정보 요청
 - [x] 로딩
-- [] 타이틀 설정
-- [] 코드 리팩토링
-- [] 404 UI
+- [x] 타이틀 설정
+- [x] 코드 리팩토링
 
 ### 래퍼런스
 

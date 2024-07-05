@@ -43,20 +43,20 @@ const Num = styled.div`
   }
 `;
 
-export const Section = ({ datas }) => {
+export const Section = ({ sectionData }) => {
   return (
     <SSection>
-      <h3>{datas.weather[0].main}</h3>
+      <h3>{sectionData.weather[0].main}</h3>
       <TempWrap>
         <Temp className="temp">
-          {Math.round(datas.main.temp)} <span>°</span>
+          {Math.round(sectionData.main.temp)} <span>°</span>
         </Temp>
         <Temp>
           <Num>
-            {Math.round(datas.main.temp_max)} <span>°</span>c
+            {Math.round(sectionData.main.temp_max)} <span>°</span>c
           </Num>
           <Num>
-            {Math.round(datas.main.temp_min)} <span>°</span>c
+            {Math.round(sectionData.main.temp_min)} <span>°</span>c
           </Num>
         </Temp>
       </TempWrap>
