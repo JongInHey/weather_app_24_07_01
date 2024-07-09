@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Gnb } from "./Gnb";
+import { MoreView } from "./MoreView";
 
 const SHeader = styled.header`
   display: flex;
@@ -30,12 +31,15 @@ const MyLocation = styled.div`
 const More = styled.div`
   font-size: 26px;
   cursor: pointer;
+  z-index: 99;
 `;
 
 export const Header = ({ headerData }) => {
   const [dates, setDates] = useState();
   const [show, setShow] = useState("-450px");
+  const [view, setView] = useState("none");
   const [active, setActive] = useState(true);
+  const [moreactive, setMoreActive] = useState(true);
 
   const timeHandler = () => {
     const date = new Date();
@@ -65,21 +69,42 @@ export const Header = ({ headerData }) => {
       setShow("-450px");
       setActive(true);
     }
-  };
 
+    if (!moreactive) {
+      setView("none");
+      setMoreActive(true);
+    }
+  };
+  const moreHandler = () => {
+    if (moreactive) {
+      setView("block");
+      setMoreActive(false);
+    } else if (!moreactive) {
+      setView("none");
+      setMoreActive(true);
+    }
+
+    if (!active) {
+      setShow("-450px");
+      setActive(true);
+    }
+  };
   return (
-    <SHeader>
-      <Gnb show={show} data={headerData} />
-      <Menu onClick={menuHandler}>
-        <FontAwesomeIcon icon={faBars} />
-      </Menu>
-      <MyLocation>
-        <h3>{headerData.name}</h3>
-        <p>{dates}</p>
-      </MyLocation>
-      <More>
-        <FontAwesomeIcon icon={faPlus} />
-      </More>
-    </SHeader>
+    <>
+      <SHeader>
+        <Gnb show={show} data={headerData} />
+        <Menu onClick={menuHandler}>
+          <FontAwesomeIcon icon={faBars} />
+        </Menu>
+        <MyLocation>
+          <h3>{headerData.name}</h3>
+          <p>{dates}</p>
+        </MyLocation>
+        <More onClick={moreHandler}>
+          <FontAwesomeIcon icon={faPlus} />
+        </More>
+        <MoreView view={view} setView={setView} setMoreActive={setMoreActive} />
+      </SHeader>
+    </>
   );
 };

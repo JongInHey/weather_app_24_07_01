@@ -8,6 +8,7 @@
 - [x] styled-components
 - [x] styled-reset
 - [x] react-helmet
+- [x] react-hook-form
 
 ### 작업 내용
 
@@ -19,7 +20,11 @@
 - [x] 현재 위치 얻어오기
 - [x] 현재 위치에 맞는 날씨 정보 요청
 - [x] 로딩
+- [x] 404 notfoundpage 구성
 - [x] 타이틀 설정
+- [x] 로그인, 회원가입 페이지 구성
+- [x] 로그인, 회원가입 form 구성
+- [x] 로그인, 회원가입 required 필수 요소 구성
 - [x] 코드 리팩토링
 
 ### 래퍼런스

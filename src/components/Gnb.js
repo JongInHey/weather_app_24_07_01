@@ -15,7 +15,7 @@ const MenuShow = styled.div`
   top: 0;
   left: ${(props) => props.$sdisplay};
   z-index: 98;
-  padding: 40px;
+  padding: 80px 40px;
   box-sizing: border-box;
 `;
 const SetWrap = styled.div`
@@ -32,7 +32,7 @@ const TempWrap = styled.div`
   font-size: 24px;
   height: 44px;
   h3 {
-    margin-left: 80px;
+    margin-left: 60px;
   }
 
   span {
